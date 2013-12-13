@@ -54,12 +54,13 @@
     </div>
     <div style="margin:16px;">
         Instruction: draw shapes to lead the ball to square while collecting at least 3 eggs! You can draw static curves or polygons.
-        <br/><br/>
-        Tips: curves have lower friction as well as restitution, while shapes have both of them higher.
+        <br/>
+        <br/>Tips: curves have lower friction as well as restitution, while shapes have both of them higher.
     </div>
 </body>
 
 <script type="text/javascript">
+var currentAnim = null;
 var isStarted = false;
 var inLevel;
 
@@ -72,6 +73,15 @@ window.requestAnimFrame = (function() {
         function( /* function */ callback, /* DOMElement */ element) {
             window.setTimeout(callback, 1000 / 60);
     };
+})();
+
+window.cancelRequestAnimFrame = (function() {
+    return window.cancelAnimationFrame ||
+        window.webkitCancelRequestAnimationFrame ||
+        window.mozCancelRequestAnimationFrame ||
+        window.oCancelRequestAnimationFrame ||
+        window.msCancelRequestAnimationFrame ||
+        clearTimeout
 })();
 
 $('#startBtn').click(function() {
@@ -87,6 +97,7 @@ $('#startBtn').click(function() {
 function init(level_no) {
     $.getScript("levels/level" + level_no + ".js", function() {
         isStarted = false;
+        cancelAnimationFrame(currentAnim);
         $("#startBtn .ui-btn-text").text("Start");
 
         var b2Vec2 = Box2D.Common.Math.b2Vec2,
@@ -422,7 +433,7 @@ function init(level_no) {
                 }
             }
 
-            requestAnimFrame(update);
+            currentAnim = requestAnimFrame(update);
         };
 
         //helpers
