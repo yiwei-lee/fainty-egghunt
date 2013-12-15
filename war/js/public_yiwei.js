@@ -1,99 +1,3 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>Egg Hunt v0.1</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
-    <script type="text/javascript" src="js/Box2dWeb-2.1.a.3.js"></script>
-    <script src="js/bourke.js"></script>
-    <script src="js/triangulate.js"></script>
-    <script src="js/util.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-    <style type="text/css">
-    .unselectable {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    #canvas {
-        position: absolute;
-    }
-    </style>
-
-</head>
-
-<body onload="init(1);" class='unselectable'>
-    <canvas id="canvas" width="800" height="450" style="display:block; margin: 0px auto; float:left"></canvas>
-    <canvas id="draw" width="800" height="450" style="display:block; margin: 0px auto; float:left"></canvas>
-    <a href="#" data-role="button" data-inline="true" id="startBtn">Start</a>
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-            <input type="radio" name="radio-view" id="radio-view-1" value="level1" checked="checked" onclick="init(1)" />
-            <label for="radio-view-1">Level 1</label>
-            <input type="radio" name="radio-view" id="radio-view-2" value="level2" onclick="init(2)" />
-            <label for="radio-view-2">Level 2</label>
-            <input type="radio" name="radio-view" id="radio-view-3" value="level3" onclick="init(3)" />
-            <label for="radio-view-3">Level 3</label>
-            <input type="radio" name="radio-view" id="radio-view-4" value="level4" onclick="init(4)" />
-            <label for="radio-view-4">Level 4</label>
-            <input type="radio" name="radio-view" id="radio-view-5" value="level5" onclick="init(5)" />
-            <label for="radio-view-5">Level 5</label>
-            <input type="radio" name="radio-view" id="radio-view-6" value="level6" onclick="init(6)" />
-            <label for="radio-view-6">Level 6</label>
-            <input type="radio" name="radio-view" id="radio-view-7" value="level7" onclick="init(7)" />
-            <label for="radio-view-7">Level 7</label>
-            <input type="radio" name="radio-view" id="radio-view-8" value="level8" onclick="init(8)" />
-            <label for="radio-view-8">Level 8</label>
-            <input type="radio" name="radio-view" id="radio-view-9" value="level9" onclick="init(9)" />
-            <label for="radio-view-9">Level 9</label>
-            <input type="radio" name="radio-view" id="radio-view-10" value="level10" onclick="init(10)" />
-            <label for="radio-view-10">Level 10</label>
-        </fieldset>
-    </div>
-    <div style="margin:16px;">
-        Instruction: draw shapes to lead the ball to square while collecting at least 3 eggs! You can draw static curves or polygons.
-        <br/>
-        <br/>Tips: curves have lower friction as well as restitution, while shapes have both of them higher.
-    </div>
-</body>
-
-<script type="text/javascript">
-var currentAnim = null;
-var isStarted = false;
-var inLevel;
-
-window.requestAnimFrame = (function() {
-    return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        function( /* function */ callback, /* DOMElement */ element) {
-            window.setTimeout(callback, 1000 / 60);
-    };
-})();
-
-window.cancelRequestAnimFrame = (function() {
-    return window.cancelAnimationFrame ||
-        window.webkitCancelRequestAnimationFrame ||
-        window.mozCancelRequestAnimationFrame ||
-        window.oCancelRequestAnimationFrame ||
-        window.msCancelRequestAnimationFrame ||
-        clearTimeout
-})();
-
-$('#startBtn').click(function() {
-    if (!isStarted) {
-        isStarted = true;
-        $("#startBtn .ui-btn-text").text("Restart");
-        applyImpulse(startBody, start_impulse[0], start_impulse[1], 250)
-    } else {
-        init(inLevel);
-    }
-});
-
 function init(level_no) {
     $.getScript("levels/level" + level_no + ".js", function() {
         isStarted = false;
@@ -465,12 +369,9 @@ function init(level_no) {
                 y: y
             };
         }
-
+        
         requestAnimFrame(update);
     });
 
 
 };
-</script>
-
-</html>

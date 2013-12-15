@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		
+		<title>Title</title>
+		<link rel="stylesheet" href="css/game.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/Box2dWeb-2.1.a.3.min.js"></script>
+	</head>
+	<body>
+	<div data-role="page" id="levelselectorpage">
+		<div data-role="header"> 
+			<h1>Select a Level!</h1> 
+		</div> 
+	  <div data-role="content">
+	  	<table id="leveltable">
+				<tr>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level1" src="img/1.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy11" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy12" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy13" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level2" src="img/2.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy21" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy22" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy23" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level3" src="img/3.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy31" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy32" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy33" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level3" src="img/4.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy41" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy42" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy43" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level5" src="img/5.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy51" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy52" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy53" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level6" src="img/6.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy61" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy62" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy63" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level7" src="img/7.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy71" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy72" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy73" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level8" src="img/8.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy81" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy82" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy83" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="leveldiv">
+							<img class="levelimg" id="level9" src="img/9.png" width="75" />
+							<div class="candydiv">
+			    			<img class="candyimg" id="candy91" src="img/theme3/collectible1_bw.png" height="20" />
+			    			<img class="candyimg" id="candy92" src="img/theme3/collectible2_bw.png" height="20" />
+			    			<img class="candyimg" id="candy93" src="img/theme3/collectible3_bw.png" height="20" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="gobackbutton">
+						<input type="button" value="Go back" data-theme="b" onclick="goToThemeSelector();" />  
+					</td>				
+				</tr>
+			</table>
+	  
+			<script type="text/javascript" src="js/levelselector.js"></script>
+		</div>
+		<div data-role="footer"> 
+			<h4> </h4> 
+		</div> 
+	</div>
+	</body>
+</html>

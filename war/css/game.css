@@ -1,0 +1,38 @@
+#contenttable {
+	margin: 40px auto;
+}
+
+#contenttable img {
+	margin:10px;
+}
+
+#contenttable td {
+	vertical-align:top;	
+	text-align:center
+}
+
+.txt {
+	text-align:center;
+	font-size:12pt
+}
+
+#leveltable {
+	margin: 20px auto;
+}
+
+.leveldiv {
+	margin: 10px;
+}
+
+.candydiv {
+	margin-top: 5px;
+}
+
+.candyimg {
+  margin: 0px;
+  padding: 0px;
+}
+
+.gobackbutton {
+	padding-top: 20px;
+}
